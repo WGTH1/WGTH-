@@ -1,0 +1,394 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.jumping-text {
+    animation: jump 1s ease infinite; /* ใช้ animation เรียก jump ที่มีความสะดวก */
+    transition: transform 0.3s ease; /* ใช้ transition เพื่อการเปลี่ยนสีกระโดด */
+    font-size: 24px; 
+}
+/* CSS สำหรับ animation ของข้อความที่ต้องการให้กระโดด */
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.jumping-text {
+    animation: jump 1s ease infinite; /* ใช้ animation jump ที่มีความหน่วงและซ้ำ */
+}
+
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container styles */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* จัดลูกศรที่ด้านซ้ายและขวา */
+    align-items: center; /* จัดศูนย์กลางตามแนวดิ่ง */
+}
+
+header h1 {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+}
+
+nav h1 {
+    margin-right: auto;
+    margin-left: 10px; /* ปรับระยะห่างด้านซ้ายของเนื้อหา */
+    color: #fff;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Arrow styles */
+.arrow {
+    color: #ffd700; /* สีของลูกศรเมื่อไม่ hover */
+    background-color: rgba(255, 255, 255, 0.6); /* สีพื้นหลัง */
+    padding: 10px; /* ขยายพื้นที่รอบๆ ลูกศร */
+    margin: 0 15px; /* กำหนดระยะห่างระหว่างลูกศร */
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    border-radius: 50%; /* เพิ่มวงกลมให้ลูกศร */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6); /* สีพื้นหลัง */
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+    color: #000; /* สีของลูกศรเมื่อ hover */
+}
+
+.arrow-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow:hover .arrow-inner {
+    background-color: #ffffff; /* เปลี่ยนสีพื้นหลังของลูกศรเมื่อ hover */
+    border-radius: 50%; /* ทำให้วงกลม */
+    width: 40px; /* ปรับขนาด */
+    height: 40px; /* ปรับขนาด */
+    line-height: 40px; /* ให้ข้อความอยู่ตรงกลาง */
+    text-align: center; /* จัดตำแหน่งข้อความ */
+    color: black; /* สีข้อความ */
+}
+
+
+.left-arrow {
+    left: 20px; /* ย้ายลูกศรไปทางซ้าย */
+}
+
+.right-arrow {
+    right: 20px; /* ย้ายลูกศรไปทางขวา */
+}
+
+.left-arrow {
+    transform: rotate(180deg);
+}
+
+/* Section styles */
+section {
+    padding: 80px 0;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease, transform 1s ease; /* เพิ่ม transition duration */
+}
+
+section.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* เพิ่ม animation class */
+.page-enter {
+    animation: page-enter-animation 0.5s ease;
+}
+
+/* กำหนด keyframes สำหรับ animation */
+@keyframes page-enter-animation {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Gallery styles */
+/* CSS สำหรับแก้ไขหน้าต่างความสามารถให้ดูสวยงาม */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.image-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* เพิ่ม transition เพื่อให้มีการเปลี่ยนแปลงอย่างน้อย */
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.5); /* เมื่อ hover ให้ภาพขยายขึ้น */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* เพิ่ม transition เพื่อให้มีการเปลี่ยนแปลงอย่างน้อย */
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.5); /* เมื่อ hover ให้ภาพขยายขึ้น */
+}
+/* CSS styles สำหรับแกลเลอรีรูปภาพ */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* พื้นหลังสีดำโปร่งใส */
+    opacity: 0; /* ปิดการมองเห็นไว้ก่อน */
+    transition: opacity 0.3s ease; /* เพิ่มเอฟเฟกต์ความโปร่งใส */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper:hover .overlay {
+    opacity: 1; /* เปิดการมองเห็นเมื่อ hover */
+}
+
+.percentage {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังสีดำโปร่งใส */
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.round-image {
+    width: 500px;
+    border-radius: 50%; /* ทำให้มันเป็นวงกลม */
+    overflow: hidden; /* ลบส่วนที่เกินขอบวงกลม */
+}
+/* ปรับปรุงการจัดรูปแบบในหน้าต่าง "ติดต่อ" */
+.social-icons {
+    margin: 20px 0; /* ปรับระยะห่างขอบภายนอก */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+}
+
+.social-icons .icon {
+    margin: 0 15px; /* ปรับระยะห่างระหว่างไอคอน */
+    transition: transform 0.3s ease; /* เพิ่มเอฟเฟกต์เมื่อ hover */
+}
+
+.social-icons .icon img {
+    width: 50px; /* ปรับขนาดความกว้างของไอคอน */
+    height: 50px; /* ปรับขนาดความสูงของไอคอน */
+}
+
+.social-icons .icon:hover {
+    transform: translateY(-5px); /* เลื่อนไอคอนขึ้นเล็กน้อยเมื่อ hover */
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-wrapper {
+    flex: 0 0 calc(25% - 10px); /* จัดให้รูปภาพแต่ละรูปเป็น 25% ของความกว้างของพื้นที่ของ container */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 50%;
+    height: auto;
+}
+
+.percentage {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px; /* เพิ่มขอบมนต์เข้าไป */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+#home {
+    position: relative; /* กำหนดให้ส่วนหลักอยู่ในตำแหน่งเริ่มต้น */
+}
+
+#home img.round-image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+#home .image-caption {
+    position: absolute; /* กำหนดให้ข้อความเป็นตำแหน่งเฉพาะ */
+    bottom: 0; /* จัดตำแหน่งของข้อความไว้ที่ด้านล่าง */
+    left: 50%; /* จัดตำแหน่งให้อยู่ตรงกลาง */
+    transform: translateX(-50%); /* จัดตำแหน่งให้อยู่ตรงกลาง */
+    background-color: rgba(0, 0, 0, 0.7); /* กำหนดสีพื้นหลังของข้อความ */
+    color: white; /* กำหนดสีข้อความ */
+    padding: 10px; /* กำหนดระยะห่างของข้อความ */
+    border-radius: 5px; /* กำหนดขอบโค้งของพื้นหลัง */
+}
+
+/* CSS สำหรับแก้ไขหน้าต่าง "แนะนำตัวเอง" */
+#about {
+    padding: 80px 0; /* ระยะห่างด้านบนและด้านล่างของเนื้อหา */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    color: #333; /* สีข้อความหลัก */
+}
+
+#about h2 {
+    font-size: 36px; /* ขนาดตัวหนังสือของหัวเรื่อง */
+    margin-bottom: 20px; /* ระยะห่างด้านล่างของหัวเรื่อง */
+}
+
+#about p {
+    font-size: 18px; /* ขนาดตัวหนังสือของเนื้อหา */
+}
+
+/* กล่องข้อความที่ปรากฎเมื่อโฮเวอร์อยู่ในลักษณะของรูปภาพ */
+.overlay {
+    position: absolute; /* ตำแหน่งอยู่ภายในกล่อง */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* สีดำโปร่งใส */
+    opacity: 0; /* การแสดงผลที่ค่อนข้างเสียหาย */
+}
